@@ -22,3 +22,5 @@ plugins: [require("daisyui")],
 @tailwind components;
 @tailwind utilities;
 ```
+5. Theme index.html
+``` <html data-theme="cupcake" lang="en">```
