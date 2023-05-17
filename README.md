@@ -24,3 +24,28 @@ plugins: [require("daisyui")],
 ```
 5. Theme index.html
 ``` <html data-theme="light" lang="en">```
+# EsLint
+1. ```  env: { browser: true, es2020: true, node: true },```
+
+# React-Router
+in main.jsx
+```
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+```
+
+```
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <div>Hello world!</div>,
+  },
+]);
+```
+
+
+```
+<RouterProvider router={router} />
+```
