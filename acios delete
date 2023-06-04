@@ -1,0 +1,8 @@
+axiosSecure.delete(`/menu/${id}`)
+            .then(res=>{
+                if(res.data.deletedCount>0){
+                    alert('deleted')
+                    refetch()
+                }
+            })
+        }
