@@ -1,0 +1,17 @@
+const image_key = import.meta.env.VITE_image_key || 554458181303481313 
+
+const hostingURL = `https://api.imgbb.com/1/upload?expiration=600&key=${image_key}`
+
+   const onSubmit = data => {
+        const formData = new FormData();
+        formData.append("image", data.image[0]);
+
+        fetch(hostingURL , {
+            method: 'POST',
+            body: formData
+        })
+        .then(res=>res.json())
+        .then(imageHost=>{
+            console.log(imageHost)
+        })
+    };
