@@ -12,15 +12,17 @@
 ```
 ## Hit the post api when user is created in onAuthstatechange and save it to localstorage
 ```
-if(current){
-  fetch('localhost:5000/jwt' ,{
-  method: "POST",
-  headers : {
-  'Content-Type' : 'application/json'
-  },
-  body: JSON.stringify({email: currentUser.email})
-  }
-}).then(res=>res.json()).then(data=>{console.log(data) localstorage.setItem(data.token)})
+      if(currentUser){
+        axios.post('http://localhost:5000/jwt', {email: currentUser.email})
+        .then(data =>{
+            // console.log(data.data.token)
+            localStorage.setItem('access-token', data.data.token)
+            setLoading(false);
+        })
+    }
+    else{
+        localStorage.removeItem('access-token')
+    }
 ```
 ### OR
 
